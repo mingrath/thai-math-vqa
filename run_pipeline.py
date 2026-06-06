@@ -38,6 +38,9 @@ def main():
     ap.add_argument("--max-pixels", type=int, default=DEFAULT_MAX_PIXELS,
                     help="image token budget (px). Lower if you OOM.")
     ap.add_argument("--no-cot", action="store_true", help="answer-only prompt (faster)")
+    ap.add_argument("--backend", choices=["auto", "vllm", "hf"], default="auto",
+                    help="inference engine: vllm (fast), hf (transformers, robust on "
+                         "Colab if vLLM/CUDA breaks), auto (try vllm then fall back)")
     ap.add_argument("--tp", type=int, default=1, help="tensor parallel size (#GPUs)")
     ap.add_argument("--max-model-len", type=int, default=8192)
     ap.add_argument("--gpu-mem-util", type=float, default=0.92)
@@ -56,6 +59,7 @@ def main():
         df, args.model, n=args.n, temperature=args.temperature, top_p=args.top_p,
         max_tokens=args.max_tokens, cot=not args.no_cot, max_pixels=args.max_pixels,
         tp=args.tp, max_model_len=args.max_model_len, gpu_mem_util=args.gpu_mem_util,
+        backend=args.backend,
     )
 
     if args.mode == "eval":
