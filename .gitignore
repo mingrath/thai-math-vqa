@@ -1,0 +1,28 @@
+# data — pulled per-machine via kaggle CLI, never committed
+data/*
+!data/.gitkeep
+
+# submissions — keep dir, ignore generated csvs
+submissions/*
+!submissions/.gitkeep
+
+# python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+.env
+
+# model artifacts / logs
+*.ckpt
+*.pt
+*.pth
+*.onnx
+*.safetensors
+wandb/
+lightning_logs/
+runs/
+
+# os
+.DS_Store
