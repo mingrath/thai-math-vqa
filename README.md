@@ -1,5 +1,7 @@
 # Thai math visual question answering
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mingrath/thai-math-vqa/blob/main/notebooks/colab_run.ipynb)
+
 SuperAI Engineer S6 — individual Kaggle hackathon.
 
 - **Competition:** https://www.kaggle.com/competitions/super-ai-engineer-ss-6-individual-test-thai-math-vqa-challen
